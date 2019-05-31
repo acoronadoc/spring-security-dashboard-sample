@@ -1,0 +1,81 @@
+
+body {
+	text-align: center;
+	background-color: #ececec;
+	font-family: 'Helvetica', sans-serif;
+	}
+
+h2 {
+	margin: 0px;
+	}
+	
+.clear {
+	clear: both;
+	height: 1px;
+	overflow: hidden;
+	}
+
+.dashboard-wrapper {
+	margin: auto;
+	max-width: 920px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 15px;
+	grid-row-gap: 15px;
+	}
+
+.dashboard-wrapper .panel {
+	text-align: left;
+	background-color: #fff;
+	border: 1px solid #d3d3d3;
+	box-shadow: 0 0 4px 1px rgba(143,143,143,.2);
+	padding: 15px;
+	}
+
+.dashboard-wrapper #p1.panel, .dashboard-wrapper #p2.panel {
+	grid-column: 1 / 4;
+	}
+
+.bottom {
+	font-size: 10px;
+	margin-top: 15px;
+	}
+
+.bottom a {
+	color: #333;
+	text-decoration: none;
+	}
+
+@media screen and (max-width: 1024px) {
+	.dashboard-wrapper .panel {
+		grid-column: 1 / 4;
+		}	
+	}
+	
+.dashboard-controls {
+	margin: auto;
+	max-width: 920px;
+	clear: both;
+	}
+
+.dashboard-controls .dashboard-controls-reg {
+	float: left;
+	margin: 15px;
+	width: 260px;
+	text-align: left;
+	}
+
+.dashboard-controls .dashboard-controls-reg input, .dashboard-controls .dashboard-controls-reg select {
+	height: 18px;
+	padding: 8px;
+	width: 100%;
+	background-color: #ccc;
+	border: 0px;
+	border-radius: 5px;
+	}
+	
+.dashboard-controls .dashboard-controls-reg select {
+	height: 34px;
+	padding: 6px;
+	}
+	

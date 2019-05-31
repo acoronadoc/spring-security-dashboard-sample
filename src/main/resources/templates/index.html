@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Super Dashboard</title>
+
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+		<script th:src="'charts.js?ver=' + ${ver}"></script> 
+		<link rel="stylesheet" th:href="'style.css?ver=' + ${ver}">
+	</head>
+
+	<body>
+		<div class='dashboard-controls' style='text-align: right;'>
+			<a href='/logout' style='color: #000; font-size: 12px; text-decoration: none;'>Logout</a>
+		</div>
+		
+		<h1>Super Dashboard</h1>
+
+		<div class='dashboard-controls'>
+			<div class='dashboard-controls-reg'>
+				<div class='dashboard-controls-label'>From:</div>	
+				<div class='dashboard-controls-value'><input id="from" placeholder="01/01/2019" onchange='javascript: drawCharts();' /></div>	
+			</div>	
+			<div class='dashboard-controls-reg'>
+				<div class='dashboard-controls-label'>To:</div>	
+				<div class='dashboard-controls-value'><input id="to" placeholder="01/01/2019" onchange='javascript: drawCharts();' /></div>	
+			</div>	
+			<div class='dashboard-controls-reg'>
+				<div class='dashboard-controls-label'>Video:</div>	
+				<div class='dashboard-controls-value'>
+					<select id='video' onchange='javascript: drawCharts();'>
+						<option id="video" value=''>Todos</option>
+						
+						<option th:each="video: ${videos}" th:value="${video[0]}" th:utext="${video[1]}" />
+					</select>
+				</div>	
+			</div>	
+			
+			<div class='clear'>&nbsp;</div>			
+		</div>		
+
+		<div class="dashboard-wrapper">
+			<div id='p1' class='panel'><h2>Subscriptores por día</h2> <div id='p1Chart'></div> </div>
+			<div id='p2' class='panel'><h2>Subscriptores por dia de la semana</h2> <div id='p2Chart'></div> </div>
+		</div>
+
+		<div class='bottom'><a target='_blank' href='https://www.albertcoronado.com'>Made with love by Albert Coronado</a></div>
+	</body>
+</html>
