@@ -10,7 +10,7 @@ function drawCharts() {
 	params+="&to="+escape( getFieldDate("to") );
 	params+="&video="+escape( document.getElementById( "video" ).value );
 	
-	fetch('/api'+params).then(function(response) {
+	fetch('/api'+params, { credentials: 'include' }).then(function(response) {
 		response.json().then(function(value) { 
 			drawChartP1( value.subsdia );
 			drawChartP2( value.subssem );
